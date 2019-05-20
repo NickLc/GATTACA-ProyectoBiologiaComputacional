@@ -86,53 +86,68 @@ Lima - Peru\\
 
 \subsection{Objetivos Generales}
 \begin{itemize}
-\item  Creación de un software grafico con una base de datos para el analisis de infomacion genética.
+\item  Creación de una aplicación gráfico con una base de datos para el análisis de información genética.
 \end{itemize}
 
-\subsection{Objetivos Especificos}
+\subsection{Objetivos Específicos}
+
 \begin{itemize}
-\item Recolectar informacion genetica de especies endemicas.
-
-\item Desarollar la aplicación  para el analisis de secuencias,.
-
+\item Recolectar información genética de especies endémicas.
+\item Desarrollar la aplicación para el análisis de secuencias,.
 \item Desarrollar algoritmos para obtener árboles filogenéticos 
-
 \item Evaluar el árbol filogenético
 \end{itemize}
 
 \section{Resumen Ejecutivo}
 
-Se pretender crear un software y una base de datos con la informacion genetica de las especies endemicas del peru, el software procesara las secuencias, crara el árbol filogenético, mostrara los resultados y analizara las relaciones evolutivas de las especies escogidas.
+Se pretender crear una aplicación y una base de datos con la información genética de las especies endémicas del Perú, el software procesara las secuencias, creará el árbol filogenético, mostrará los resultados y analizará las relaciones evolutivas de las especies escogidas.
 
 \section{Descripción del Proyecto}
 
-El proyecto sera implementado netamente en el lenguaje Pyhton
-Las librerias utilizadas seran:
+El proyecto sera implementado netamente en el lenguaje Python
+Las librerías utilizadas serán:
 \begin{itemize}
 \item BioPython para el procesamiento de secuencias
-\item Tkinter o Gt para el entorno grafico.
+\item Flask para el entorno gráfico.
 \end{itemize}
-Dentro de la GUI, se pobra escoger /Especie/Genes/Proteina para el análisis posterior.\\
-Los datos recolectados seran reales de la base de datos de NCBI.\\
+Dentro de la GUI, se pobre escoger Especies para el análisis posterior.\\
+Los datos recolectados serán reales de la base de datos de NCBI.\\
 Se implementara algoritmos para el alineamiento de Genes homólogos.\\
-Se implementara algoritmos para el alineamiento de Proteinas.\\
-Se implementara la algoritmos para la Generacion de Arboles Filogenticos de acuerdo a un modelo.\\
+Se implementara algoritmos para el alineamiento de Proteínas.\\
+Se implementara la algoritmos para la Generación de Arboles Filogenéticos de acuerdo a un modelo.\\
 
-\noindent Para el desarrollo del proyecto se seguira la siguiente metodologia:
+\noindent Para el desarrollo del proyecto se seguirá la siguiente metodología:
 
-\subsection{Determinar las secuencias a utilizar}
-El alineamiento de secuencias debe permiter la determinación de regiones homologas 
+\subsection{Determinar las especies y el material a utilizar}
+Se escogió las siguientes especies:
+\begin{itemize}
+    \item Tremarctos ornatus
+    \item Panthera onca
+    \item Vicugna vicugna
+    \item Aulacorhynchus huallagae
+    \item Leopardus jacobita
+    \item Inia geoffrensis
+    \item Spheniscus humboldti
+    \item Vultur gryphus
+    \item Lama glama
+    \item Cavia porcellus
+    \item Platalea ajaja
+\end{itemize}
+
+La proteína a analizarse sera el NADH deshidrogenasa, también conocido como Complejo I, subunidad 2 debido a que se encuentra presente en todas las especias y está codificado. 
+La proteína escogida cumple una importante función en la respiración bacteriana y mitocondrial. Por ende, es posible encontrarla en diversas especies y no es extraño que se haya codificado.
+Una importante observación es que no todas las especies se encuentran codificadas en la base de datos de NCBI, faltando genes importantes.
 \subsection{Elegir los marcadores moleculares}
-\subsection{Realizar el lineamiento multiple de genes homologos}
+\subsection{Realizar el lineamiento múltiple de genes homólogos}
 \subsection{Elegir un modelo evolutivo}
 Entre los modelos tenemos:
 
 \begin{itemize}
-\item Modelo Jukes-Cantor: asumiento que los nucleotidos son substituidos con igual probabilidad
+\item Modelo Jukes-Cantor: asimiento que los nucleótidos son substituidos con igual probabilidad
 \item Modelo Kimura: realista ya que considera las diferentes tasas de mutación
 \end{itemize}
 \subsection{Aplicar un método para la construcción del árbol filogenético}	
-Entre los metodos tenemos 
+Entre los métodos tenemos 
 \begin{itemize}
 	\item Basados en distancia
 	\item Basados en secuencia
@@ -143,13 +158,13 @@ Entre los metodos tenemos
 
 \subsection{Verificar la fiabilidad del árbol construido}
 
-\subsection{Analizar el arbol filogenetico}
+\subsection{Analizar el árbol filogenético}
 Apartir del arbol filogenetico se podra descubrir/Mostrar/Analizar las relaciones evoluticas de las especies endemicas escogidas.
 \subsubsection{Modelamiento de la Estrutura de Proteinas}
 En el analisis se encuentra el modelamiento de la Estructura de Proteinas
 
 \subsection{Cronograma}
-Para el desarollo del proyecto se emplea un cronograma por semanas, las fechas del cronograma coinciden con las fechas propuestas para evaluaciones de práctica del proyecto. En dichas ocaciones se presentarán y evaluarán los avances del proyecto.
+Para el desarrollo del proyecto se emplea un cronograma por semanas, las fechas del cronograma coinciden con las fechas propuestas para evaluaciones de práctica del proyecto. En dichas ocasiones se presentarán y evaluarán los avances del proyecto.
 
 \begin{center}
 	\includegraphics[width=14cm,height=8cm]{cronoextendido.png}\\
@@ -158,7 +173,7 @@ Para el desarollo del proyecto se emplea un cronograma por semanas, las fechas d
 
 \begin{center}
 	\includegraphics[width=10cm,height=6cm]{cronoentregrable.png}\\
-	Fig: Cronograma coincidente a los entregables
+	Fig: Cronograma coincidente a los entrégales
 \end{center}
 
 
@@ -166,7 +181,7 @@ Para el desarollo del proyecto se emplea un cronograma por semanas, las fechas d
 
 
 \section{Algoritmos e implementación computacional}
-Una descripcion de los algoritmos y herramientas que se [planean utilizar en caso de la propuesta] utilizados incluyendo pseudo código y codigo fuente
+Una descripción de los algoritmos y herramientas que se [planean utilizar en caso de la propuesta] utilizados incluyendo pseudo código y código fuente
 \section{Resultados}
 Una descripción de los resultados [esperados en el caso de la propuesta]. Un reporte integrando los resultados proporcionados por la herramienta
 \section{Conclusiones}

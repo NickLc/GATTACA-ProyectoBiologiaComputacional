@@ -48,7 +48,7 @@
 
 \begin{Large}
 \color{blue}
-\textbf{Creación de un sistema de ayuda para el analisis de información Genética de Especies endémicas de las regiones del Perú\\}
+\textbf{PhyloZofia\\}
 \color{black}
 \end{Large}
 \vspace*{0.2in}
@@ -86,7 +86,8 @@ Lima - Peru\\
 
 \subsection{Objetivos Generales}
 \begin{itemize}
-\item  Creación de una aplicación gráfico con una base de datos para el análisis de información genética.
+\item Creación de un aplicación gráfica usando BioPython y TKinter para el analisis de información Genética de Especies endémicas de las regiones del Perú.
+
 \end{itemize}
 
 \subsection{Objetivos Específicos}
@@ -94,13 +95,17 @@ Lima - Peru\\
 \begin{itemize}
 \item Recolectar información genética de especies endémicas.
 \item Desarrollar la aplicación para el análisis de secuencias,.
-\item Desarrollar algoritmos para obtener árboles filogenéticos 
+\item Desarrollar algoritmos para obtener las alineaciones, árboles filogenéticos 
 \item Evaluar el árbol filogenético
 \end{itemize}
 
 \section{Resumen Ejecutivo}
 
-Se pretender crear una aplicación y una base de datos con la información genética de las especies endémicas del Perú, el software procesara las secuencias, creará el árbol filogenético, mostrará los resultados y analizará las relaciones evolutivas de las especies escogidas.
+Se pretender crear una aplicación gráfica conectada a una base de datos con la información genética de las especies endémicas del Perú, el software procesara las secuencias, creará el árbol filogenético, mostrará los resultados y analizará las relaciones evolutivas de las especies escogidas.
+Se escogió como marcaadores moleculares a la proteína NADH deshidrogenasa subunidad 2 debido la importante función respiratoria mitocondrial, hecho por el cual tiene presencia en todas las especies escogidas.
+Se realizó el alineamiento utilizando la herramienta en linea EMBL-EBI.
+Se utilizó el modelo evolutivo Kimura y el método para la construcción de árbol escogido fue un método basado en agrupamiento.
+Se implementó el UPGMA y el método Unión de vecinos.
 
 \section{Descripción del Proyecto}
 
@@ -108,7 +113,7 @@ El proyecto sera implementado netamente en el lenguaje Python
 Las librerías utilizadas serán:
 \begin{itemize}
 \item BioPython para el procesamiento de secuencias
-\item Flask para el entorno gráfico.
+\item Tkinter para el entorno gráfico.
 \end{itemize}
 Dentro de la GUI, se pobre escoger Especies para el análisis posterior.\\
 Los datos recolectados serán reales de la base de datos de NCBI.\\
@@ -119,46 +124,147 @@ Se implementara la algoritmos para la Generación de Arboles Filogenéticos de a
 \noindent Para el desarrollo del proyecto se seguirá la siguiente metodología:
 
 \subsection{Determinar las especies y el material a utilizar}
-Se escogió las siguientes especies:
+
+Las especies se escogieron por ser especies endémicas del Perú, especias en \textbf{peligro de extinción} en el Perú y \textbf{especies representativas} del Perú. Además, se tuvo en cuenta la disponibilidad de material genético puesto que muchas de las especies endémicas poseen una base de datos genética incompleta y algunas no se encuentran codificadas en absoluto.\\
+
+\noindent El material genetico se encuentran en la base de datos de NCBI, se los nombres son un enlace para poder optener más información en NCBI.\\
+
+\noindent Se escogió las siguientes 11 especies:
 \begin{itemize}
-    \item Tremarctos ornatus
-    \item Panthera onca
-    \item Vicugna vicugna
-    \item Aulacorhynchus huallagae
-    \item Leopardus jacobita
-    \item Inia geoffrensis
-    \item Spheniscus humboldti
-    \item Vultur gryphus
-    \item Lama glama
-    \item Cavia porcellus
-    \item Platalea ajaja
+    \item \href{https://www.ncbi.nlm.nih.gov/protein/ABM63279.1/}{\underline{Tremarctos ornatus}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/AIY56286.1}{\underline{Panthera onca}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/ACJ45788.1}{\underline{Vicugna vicugna}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/329756060}{\underline{Aulacorhynchus huallagae}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/YP_009178568.1}{\underline{Leopardus jacobita}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/NP_944712.1}{\underline{Inia geoffrensis}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/AON77377.1}{\underline{Spheniscus humboldti}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/AEH42425.1}{\underline{Vultur gryphus}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/BAH23368.1}{\underline{Lama glama}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/AJE26518.1}{\underline{Cavia porcellus}}
+    
+    \item 
+    \href{https://www.ncbi.nlm.nih.gov/protein/298371651}{\underline{Platalea ajaja}}
+    
 \end{itemize}
 
-Estas especies se escogieron por ser especies endémicas del Perú, especias en peligro de extinción en el Perú y especies representativas del Perú. Además, se tuvo en cuenta la disponibilidad de material genético puesto que muchas de las especies endémicas poseen una base de datos genética incompleta y algunas no se encuentran codificadas en absoluto.
 
-La proteína a analizarse sera el NADH deshidrogenasa, también conocido como Complejo I, subunidad 2 debido a que se encuentra presente en todas las especias y está codificado. 
-La proteína escogida cumple una importante función en la respiración bacteriana y mitocondrial. Por ende, es posible encontrarla en diversas especies y no es extraño que se haya codificado.
-Una importante observación es que no todas las especies se encuentran codificadas en la base de datos de NCBI, faltando genes importantes.
 \subsection{Elegir los marcadores moleculares}
-\subsection{Realizar el lineamiento múltiple de genes homólogos}
-\subsection{Elegir un modelo evolutivo}
-Entre los modelos tenemos:
+La elección de los marcadores moleculares es una parte importante porque puede hacer una \textbf{gran diferencia} en la
+obtención de un árbol correcto.
+
+\noindent Entre los marcadores moleculares, secuencias de nucleótidos o de proteínas, se optó por utilizar \textbf{secuencias de proteínas} por las siguientes razones:
+
 
 \begin{itemize}
-\item Modelo Jukes-Cantor: asimiento que los nucleótidos son substituidos con igual probabilidad
-\item Modelo Kimura: realista ya que considera las diferentes tasas de mutación
+	\item Como se va estudiar la evolución de grupos de \textbf{organismos ampliamente divergentes} se aconseja utilizar secuencias de proteínas.
+	\item Las relaciones filogenéticas que se están analizando están en el \textbf{nivel más profundo - bacteriana}, por ello lo más adecuado es usar secuencias de proteínas conservadas.
 \end{itemize}
-\subsection{Aplicar un método para la construcción del árbol filogenético}	
-Entre los métodos tenemos 
-\begin{itemize}
-	\item Basados en distancia
-	\item Basados en secuencia
-	\item Basados en agrupamiento
-	\item Basados en optimalidad
-	\item Basados en caracteres
-\end{itemize}
+
+
+\subsubsection*{Proteina NADH deshidrogenasa}
+
+La proteína a analizarse sera el NADH deshidrogenasa, también conocido como Complejo I, subunidad 2 debido a que se encuentra presente en todas las especias y está codificado. \\
+La proteína escogida cumple una importante \textbf{función en la respiración bacteriana y mitocondrial}. Por ende, es posible encontrarla en diversas especies y no es extraño que se haya codificado.\\
+Una importante observación es que no todas las especies se encuentran codificadas en la base de datos de NCBI, faltando genes importantes.
+
+\begin{center}
+	\includegraphics[width=8.5cm,height=8.5cm]{NADH.png}
+	
+	Fig. Proteina NADH deshidrogenasa
+\end{center}
+
+
+\subsection{Realizar el alineamiento múltiple de genes homólogos}
+Este paso es el mas importante de todas, ya que éste establece las correspondencias posicionales en la evolución.\\
+Sólo el alineamiento correcto produce inferencias filogenéticas
+correctas.
+\subsubsection*{EMBL-EBI}
+Para la alineación de secuencias se utilizada la Web de EMBL-EBI: \textbf{Multiple Sequence Alignment} 
+\href{https://www.ebi.ac.uk/Tools/msa/muscle/}{\underline{click aquí para consultar la pagina}}
+\\
+Las secuencias se enviaran a la Web, esta realizara la alineación luego se descargara los resultados en formato clustal.
+\\
+Cuando descargamos el archivo tiene el siguiente formato ".clwstrict" luego cambiamos a ".clustal".
+
+\subsubsection*{Clustalo}
+Para usuarios de Ubunto se utilizara el software de clustal.
+
+\subsection{Modelo Evolutivo Kimura}
+Ya que se quiere resultados lo más sofisticado (realista) se optara por el \textbf{Modelo Kimura}.
+Este modelo considera \textbf{diferentes las tasas de mutación} para las transiciones (substitución de una purina por otra o una pirimidinas por otra) y para las transversiones (substitución de una purina por una pirimidina o vice versa)\\
+
+De acuerdo a este modelo las transiciones ocurren más frecuentemente que las transversiones, lo cual provee mejores estimaciones de la distancia evolutiva
+
+
+\subsubsection{Construcción de la matriz de distancias}
+A partir del modelo Kimura tenemos:\\
+
+$d_{AB} = −(1/2) ln(1 − 2p_{ti} − p_{tv}) − (1/4) ln(1 − 2p_{tv})$\\
+
+\noindent Donde:\\
+$p_{ti}$ es la frecuencia observada de transición.\\
+$p_{tv}$ es la frecuencia de transversión.\\
+
+\noindent Las distancias evolutivas calculadas pueden ser usadas para
+construir una matriz de distancias entre todos los pares de taxones
+
+\subsection{Métodos para la construcción de árbol filogenético}	
+
+Los algoritmos basados en distancias para construir árboles
+filogenéticos pueden ser subdivididos:
+
+\subsubsection*{Métodos basados en agrupamiento}
+
+Los algoritmos basados en agrupamiento calculan el árbol
+usando una matriz de distancias e iniciando por los pares de
+secuencias más similares.
+
+Un gran ventaja es la habilidad para hacer uso de \textbf{diferentes modelos de substitución} para corregir las distancias evolutivas.
+
+\subsubsection*{Métodos basados en optimalidad}
+
+Los algoritmos basados en optimalidad comparan muchas
+topologías alternativas de árboles y seleccionan el que tenga el
+mejor ajuste entre las distancias estimadas en el árbol y las
+distancias evolutivas reales
+
+\noindent Los metodos basados en optimalidad requieren \textbf{mucha capacidad de computo} debido a la búsqueda exhaustiva que realizan, por ello se optó por escoger basados en agrupamiento.
+
+El usuario podra escoger dos metodos, a partir de la interfaz grafica:
+\subsubsection{UPGMA}
+UPGMA (unweighted pair group method using arithmetic average)
+El método más simple basado en agrupamiento.
+
+\subsubsection{Unión de Vecinos}
+El método de "Unión de vecinos" parte de una matriz de distancias, que indica la distancia entre cada par de taxones. El algoritmo comienza con un árbol completamente sin resolver, cuya topología corresponde a la de una red en estrella, y aplica los siguientes pasos hasta que el árbol está completamente resuelto y las longitudes de sus ramas.
+
 
 \subsection{Verificar la fiabilidad del árbol construido}
+Para la fase beta se encontro el siguiente arbol.
+
+\begin{center}
+	\includegraphics[width=12.5cm,height=8.5cm]{arbol.png}
+	
+	Fig. Arbol utilizando el metodo UPGMA
+\end{center}
 
 \subsection{Analizar el árbol filogenético}
 Apartir del arbol filogenetico se podra descubrir/Mostrar/Analizar las relaciones evoluticas de las especies endemicas escogidas.

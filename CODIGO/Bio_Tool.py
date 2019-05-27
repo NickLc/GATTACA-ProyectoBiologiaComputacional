@@ -1,7 +1,7 @@
-
 # coding: utf-8
 
 # # Proyecto Biologia Computacional
+
 from Bio import SeqIO
 import os
 
@@ -13,6 +13,7 @@ def join_Fasta(elegidos):
 	además que se encuentren el la lista de los elegidos = [1,3,4,8]. 
 	Retorna en la secuencia total en el directorio output_dir"""
 	input_dir = 'data_gen/fasta/' 
+
 	output_dir = 'data_gen/Sec_Unidas.fasta'
 	print('Procediendo a leer los ficheros de ', input_dir)
 	records = []
@@ -23,8 +24,6 @@ def join_Fasta(elegidos):
 		    fichero = open(input_dir + seq)
 		    record = SeqIO.read(fichero, 'fasta')
 		    records.append(record)
-
-	print('Escribiendo fichero total...')
 	SeqIO.write(records, output_dir, 'fasta')
 	print('Finalizado.')
 
@@ -51,7 +50,7 @@ def alinear_Secuencias(tipo='clwstrict'):
 
 #========================================================================
 
-# 2. Leer la secuencia
+# 2. Leer las secuencias alineadas
 
 from Bio import AlignIO
 def leer_SecAli(input_clustal = 'data_gen/Sec_Alineadas.clustal'):

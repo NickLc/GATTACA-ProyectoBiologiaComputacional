@@ -44,7 +44,6 @@ def create_tree_nj():
 	draw_Tree(tree)
 
 #==================================================================================
-#==================================================================================
 class SampleApp(tk.Tk):
 
     def __init__(self, root):
@@ -99,7 +98,7 @@ class StartPage(tk.Frame):
 
         label = tk.Label(self, text="Phylo-Zofia", font=controller.title_font)
         label.pack(side="top", fill="x", pady=10)
-
+        
         button1 = tk.Button(self, text="Go to Page One",
                             command=lambda: controller.show_frame("PageOne"), bg="green", anchor="center")
         button2 = tk.Button(self, text="Alineamiento",
@@ -156,7 +155,7 @@ class PageTwo(tk.Frame):
         
         label_tree.grid(column = 1,row = 3,sticky='NSEW')
         boton_get_tree_UPGMA.grid(column = 0, row = 4,sticky='EN')
-        boton_get_tree_Vecinos.grid(column = 2, row = 4, sticky='E')
+        boton_get_tree_Vecinos.grid(column = 2, row = 4, sticky='NSEW')
 
         
         self.grid_columnconfigure(0,weight=1)

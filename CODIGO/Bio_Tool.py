@@ -25,34 +25,62 @@ def join_Fasta(elegidos):
 		    record = SeqIO.read(fichero, 'fasta')
 		    records.append(record)
 	SeqIO.write(records, output_dir, 'fasta')
-	print('Finalizado.')
+	print('Se unido todas las secuencias fasta de {} en {}'.format(input_dir, output_dir))
+
+#========================================================================
+# 1. Alineamiento de secuencias - Generar el archivo clustal
+# Utilizando Clustal Omega para Windows
+
+#./clustalo -i globin.fa -o globin.aln --outfmt=clu --force
+
+import os
+
+def alinear_Secuencias(filename = 'Sec_Unidas.fasta'):
+    dir_inicio='data_gen'
+    dir_final = 'Clustal_Omega'
+    salida_ali = 'Sec_Alineadas.clustal'
+    print('Alineando las secuencias......')
+    mover_archivo(dir_inicio, dir_final, filename)
+    #Realizar el alineamiento
+    comando = 'cd Clustal_Omega & clustalo.exe -i {} -o {} --outfmt=clu --force'.format(filename, salida_ali)
+    os.system(comando)
+    print('Se genero el archivo: {}'.format(salida_ali))
+
+    mover_archivo(dir_final, dir_inicio, salida_ali)
+    mover_archivo(dir_final, dir_inicio, filename)
+
+	
+#----------------------------------------------------------------------------
+
+def mover_archivo(dir_inicio, dir_final, filename):
+    comando = 'move {}\{} {}\{}'.format(dir_inicio,filename, dir_final, filename)
+    os.system(comando)
 
 #========================================================================
 
-# 1. Alineamiento de secuencias - Generar el archivo clustal
+
 # MUSCLE
 # ClustalW y ClustalW strict original para una máxima compatibilidad
-
-from Bio.Align.Applications import MuscleCommandline
+"""from Bio.Align.Applications import MuscleCommandline
 import subprocess
 
 def alinear_Secuencias(tipo='clwstrict'):
-	""" Recibe un archivo fasta que contiene todas las secuencias elegidas
-	Retorna el alineamiento, el tipo puede ser 'clw' o 'clwstrict'"""
-	archivo_fasta = 'data_gen/Sec_Unidas.fasta'
-	output = 'data_gen/Sec_Unidas.clustal'
-	if tipo == 'clw':
-		print("Secuencias alineadas con clw")
-		#muscle_cline = MuscleCommandline(input=archivo_fasta, clw=True)
-	if tipo == 'clwstrict':
-		print("Secuencias alineadas con clwstrict")
-		#muscle_cline = MuscleCommandline(input=archivo_fasta, clwstrict=True)
+Recibe un archivo fasta que contiene todas las secuencias elegidas
+Retorna el alineamiento, el tipo puede ser 'clw' o 'clwstrict'
+archivo_fasta = 'data_gen/Sec_Unidas.fasta'
+output = 'data_gen/Sec_Unidas.clustal'
+if tipo == 'clw':
+	print("Secuencias alineadas con clw")
+	#muscle_cline = MuscleCommandline(input=archivo_fasta, clw=True)
+if tipo == 'clwstrict':
+	print("Secuencias alineadas con clwstrict")
+	#muscle_cline = MuscleCommandline(input=archivo_fasta, clwstrict=True)"""
 
 #========================================================================
 
-# 2. Leer las secuencias alineadas
-
+# 2. Leer las secuencias alineadas 
 from Bio import AlignIO
+
 def leer_SecAli(input_clustal = 'data_gen/Sec_Alineadas.clustal'):
 
 	""" Recibe la direccion del archivo clutal con la secuencias aliendas 
@@ -72,7 +100,7 @@ def create_Tree(alignment, tipo = 'upgma'):
 	"""Se recibe de entrada el alimenamiento y el tipo de arbol nj o upgma 
 	Genera ell arbol filogenetico 
 	"""
-
+	print('Creando el arbol filogenetico ......')
 	# 3. Creamos la matriz de distancias
 	calculator = DistanceCalculator('identity')
 	# añade la matriz de  distancias al objeto calculator y lo retorna

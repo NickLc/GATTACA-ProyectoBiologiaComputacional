@@ -13,7 +13,7 @@ def get_name_esp():
 	return name
 
 def get_elegidos():
-    """Muestra las especies elegidas"""
+    """Retorna una lista con las especies elegidas"""
     elegidos = []
     for i in range(len(check_state)):
         if check_state[i].get() == 1:
@@ -29,7 +29,17 @@ def join_Sec():
 		join_Fasta(elegidos)
 
 	if len(elegidos) < 2 :
-		messagebox.showerror('Error','Debe escoger al menos 2 especies')
+		messagebox.showerror('Error','Escoger más de 2 especies')
+
+def alineamiento_Multiple():
+    alinear_Secuencias()
+
+def alineamiento_Simple():
+    elegidos = get_elegidos()
+    if len(elegidos) != 2 :
+        messagebox.showerror('Error','Escoger solo 2 secuencias')
+    else:
+        alinear_Secuencias()        
 
 def create_tree_upgma():
 	secAli = leer_SecAli()
@@ -110,8 +120,8 @@ frame2=Frame(window)
 #----------------------------------------------------------------------- 
 #Boton de alimeamiento
 label_ali = Label(frame2, text="Alinear secuencias", font=("Calibri Bold", 14))
-boton_ali_simple = Button(frame2, text = "Alineamiento Simple") 
-boton_ali_multiple = Button(frame2, text = "Alineamiento Multiple") 
+boton_ali_simple = Button(frame2, text = "Alineamiento Simple", command=alineamiento_Simple) 
+boton_ali_multiple = Button(frame2, text = "Alineamiento Multiple", command= alineamiento_Multiple) 
 label_ali.grid(column = 1, row = 0)
 boton_ali_simple.grid(column = 0, row = 1)
 boton_ali_multiple.grid(column = 2, row = 1)

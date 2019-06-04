@@ -237,6 +237,7 @@ class BioApp():
         chosen, self.n_chsn, name = self.__get_chosen_species(optionList, v = True)
 
         if not any(chosen) or len(chosen) == 1 :
+            self.n_chsn = 0
             messagebox.showerror(
                 title = 'Error!',
                 message = 'You have to select at least two species'

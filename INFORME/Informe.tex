@@ -237,7 +237,7 @@ Los algoritmos basados en agrupamiento calculan el árbol
 usando una matriz de distancias e iniciando por los pares de
 secuencias más similares.
 
-Un gran ventaja es la habilidad para hacer uso de \textbf{diferentes modelos de substitución} para corregir las distancias evolutivas.
+\noindent Un gran ventaja es la habilidad para hacer uso de \textbf{diferentes modelos de substitución} para corregir las distancias evolutivas.
 
 \subsubsection*{Métodos basados en optimalidad}
 
@@ -248,14 +248,133 @@ distancias evolutivas reales
 
 \noindent Los metodos basados en optimalidad requieren \textbf{mucha capacidad de computo} debido a la búsqueda exhaustiva que realizan, por ello se optó por escoger basados en agrupamiento.
 
-El usuario podra escoger dos metodos, a partir de la interfaz grafica:
+\noindent El usuario podra escoger dos metodos, a partir de la interfaz grafica:
 \subsubsection{UPGMA}
 UPGMA (unweighted pair group method using arithmetic average)
 El método más simple basado en agrupamiento.
 
 \subsubsection{Unión de Vecinos}
-El método de "Unión de vecinos" parte de una matriz de distancias, que indica la distancia entre cada par de taxones. El algoritmo comienza con un árbol completamente sin resolver, cuya topología corresponde a la de una red en estrella, y aplica los siguientes pasos hasta que el árbol está completamente resuelto y las longitudes de sus ramas.
+El método de "Unión de vecinos" parte de una matriz de distancias, que indica la distancia entre cada par de taxones. El algoritmo comienza con un árbol completamente sin resolver, cuya topología corresponde a la de una red en estrella, y aplica los siguientes pasos hasta que el árbol está completamente resuelto y las longitudes de sus ramas.\\
 
+\noindent Ahora que ya sabemos los pasos para la creación de arboles filogeneticos pasamos a la implementación.
+
+
+\section{Algoritmos e implementación computacional}
+\textbf{Una descripción de los algoritmos y herramientas que se [planean utilizar en caso de la propuesta] utilizados incluyendo pseudo código y código fuente}\\
+\subsection{Prerrequisitos}
+
+Los prerrequisitos para repliacar el proyecto son:
+\subsubsection*{Python}
+Instalar python desde \href{https://www.python.org/downloads/}{\underline{Python}} para windows o 'sudo apt-get install python3.6' para linux.
+\subsubsection*{BioPython}
+BioPython es un paquete Python muy popular para manejar información biologica.
+Para instalar:
+
+conda install biopython
+ó
+pip install biopython
+
+BioPython tiene tres funcionalidades principales:
+Sequence Handling, 3D Structure, Population Genetics.
+
+
+\noindent Antes de pasar con la implemetacion necesitamos saber con que tipo de datos vamos a trabajar, estos datos se encuentran en  archivos con terminación fasta, xml, clustal, etc. Para establecer un orden y facilidad el mantenimiento de los algoritmos estos se encontraran en una carpeta \textbf{data-gen}.
+
+\subsection{Obtener Secuencias}
+\noindent Si usted quiere replicar el proyecto con otras especies, lo unico que tiene que hacer es descargar sus secuencias en formato .fasta de NCBI y agregarlas al directorio data-gen/fasta, ver la siguiente imagen.
+
+\begin{center}
+	\includegraphics[width=12.5cm,height=8.5cm]{ncbi_replica.png}
+	
+	Fig. Descargar la secuencia .fasta haciendo click en \underline{FASTA}
+\end{center}
+
+\noindent BioPython ya tienen implementado algunos algoritmo para el manejo y alineamiento de secuencias, creacion de arboles estos nos facilitan el trabajo, ya no se tiene que inventar la rueda.
+
+\subsection{Union de archivos fasta}
+
+Una vez que tenemos todos nuestros archivos .fasta, pasamos a seleccionar aquellos organismos que nos interasan para su posterior análisis.
+
+\noindent Para la selección hacemos uso de una lista llamada elegidos = [  ] que contenca los indices de las secuencias elegidas. Creamos una funcion que reciba la lista elegidos y crea un archivo en data-gen llamado \textbf{Sec-Unidas.fasta}.
+
+\begin{center}
+	\includegraphics[width=16cm,height=9cm]{join_Fasta.png}
+\end{center}
+
+Ahora que tenemos las secuencias unidas en un solo archivo pasamos a alinearlas.
+
+\subsection{Alineamiento de Secuencias}
+
+\noindent Al alinear dos o más secuencias podemos observar las partes donde ellas difieren e inferir información útil sobre ellas
+
+\noindent Un tipo de información útil es la filogenia. Esto implica que podemos inferir cómo la evolución puede explicar un conjunto particular de secuencias observadas
+
+Para el alineamiento se utilizara la herramienta \href{http://www.clustal.org/}{\underline{Clustal}} este nos proporciona el alineamiento tanto para Windows como para Linux.
+
+\subsubsection{Alineamiento en Windows}
+Si estamos usando windows usamos \href{http://www.clustal.org/omega/}{\underline{Clustal Omega}}, una vez descargado el programa podemos hacer uso de este revisando el archivo README que viene con el programa.
+  
+\noindent El algoritmo para la implementacion recibe el archivo de las secuencias unidas y genera un archivo \textbf{.clustal} con el alineamiento, se hace uso de comandos de sistema. \\
+
+ 
+\begin{center}
+	\includegraphics[width=16cm,height=7cm]{Alin_Sec.png}
+\end{center}
+
+\subsection{Lectura de Secuencias Alineadas}
+Para poder hacer uso de las secuencias alineadas tenemos que almacenarla en una variable o tambien llamado objeto alineamiento. El siguiente algoritmo recibe la direccion del archivo clusta y retorna el objeto aligment.
+
+\begin{center}
+	\includegraphics[width=16cm,height=7cm]{leerAlin.png}
+\end{center}
+
+
+\subsection{Creación de la Matriz de Distancias}
+Usando el parsing del alienamiento , podemos obtener la distancia (o diferencia) entre todas las secuencias.
+
+Esto nos indica, para cada par de secuencias, cuan diferentes son.
+Para el caso ejemplo usamos como parametro 'identity', tambien esta el parametro 'blosum62' que toma diferentes valores de transición y transversión. 
+\begin{center}
+	\includegraphics[width=16cm,height=5cm]{matriz.png}
+\end{center}
+
+\subsection{Creación del Arbol Filogenetico}
+Finalmente, podemos construir un arbol filogenético a partir de las distancias entre todas las secuencias.
+Se crea una función donde se pueda escoger el tipo de arbol a crear entre el upgma y nj(union de vecinos).
+
+\begin{center}
+	\includegraphics[width=16cm,height=10cm]{CrearArbol.png}
+\end{center}
+Una vez creado el objeto arbol pasamos mostrar el arbol
+
+\subsubsection*{Mostrar Arbol}
+Para mostrar el arbol usamos la funcion \textbf{Phylo.draw()}, a partir de este arbol se puede realizar el análisis.
+ 
+\noindent 
+\begin{center}
+	\includegraphics[width=11cm,height=5cm]{mostrarArbol.png}
+\end{center}
+
+\subsection{Interfaz Grafica}
+\noindent Todos estos algoritmos y otros se encuentran como funciones en una libreria llamada \textbf{BioTool}, el cual es usado en la implementacion de la interfaz grafica.
+Para la interfaz grafica se utiliza las siguientes librerias, estas ya vienen por defecto con python.
+\begin{itemize}
+
+\item from tkinter import *
+\item from tkinter import messagebox
+\item from tkinter.ttk import *
+\item from PIL import Image, ImageTk
+
+\end{itemize}
+No se muestra el codigo porque posee demasiadas lineas. La intefaz final se muestra en la siguiente imagen.
+\begin{center}
+	\includegraphics[width=11cm,height=5cm]{InterfazFinal.png}
+\end{center}
+
+
+
+\section{Resultados}
+Una descripción de los resultados [esperados en el caso de la propuesta]. Un reporte integrando los resultados proporcionados por la herramienta
 
 \subsection{Verificar la fiabilidad del árbol construido}
 Para la fase beta se encontro el siguiente arbol.
@@ -271,27 +390,6 @@ Apartir del arbol filogenetico se podra descubrir/Mostrar/Analizar las relacione
 \subsubsection{Modelamiento de la Estrutura de Proteinas}
 En el analisis se encuentra el modelamiento de la Estructura de Proteinas
 
-\subsection{Cronograma}
-Para el desarrollo del proyecto se emplea un cronograma por semanas, las fechas del cronograma coinciden con las fechas propuestas para evaluaciones de práctica del proyecto. En dichas ocasiones se presentarán y evaluarán los avances del proyecto.
-
-\begin{center}
-	\includegraphics[width=14cm,height=8cm]{cronoextendido.png}\\
-	Fig: Cronograma por semanas	
-\end{center}
-
-\begin{center}
-	\includegraphics[width=10cm,height=6cm]{cronoentregrable.png}\\
-	Fig: Cronograma coincidente a los entrégales
-\end{center}
-
-
-\vspace*{0.2in}
-
-
-\section{Algoritmos e implementación computacional}
-Una descripción de los algoritmos y herramientas que se [planean utilizar en caso de la propuesta] utilizados incluyendo pseudo código y código fuente
-\section{Resultados}
-Una descripción de los resultados [esperados en el caso de la propuesta]. Un reporte integrando los resultados proporcionados por la herramienta
 \section{Conclusiones}
 Incluye las ventajas y desventajas del enfoque utilizado, aspectos inesperados del proyecto, trabajo futuro, etc.
 \section{Apéndice}

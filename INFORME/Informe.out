@@ -11,11 +11,19 @@
 \BOOKMARK [2][-]{subsection.3.5}{M\351todos para la construcci\363n de \341rbol filogen\351tico}{section.3}% 11
 \BOOKMARK [3][-]{subsubsection.3.5.1}{UPGMA}{subsection.3.5}% 12
 \BOOKMARK [3][-]{subsubsection.3.5.2}{Uni\363n de Vecinos}{subsection.3.5}% 13
-\BOOKMARK [2][-]{subsection.3.6}{Verificar la fiabilidad del \341rbol construido}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.7}{Analizar el \341rbol filogen\351tico}{section.3}% 15
-\BOOKMARK [3][-]{subsubsection.3.7.1}{Modelamiento de la Estrutura de Proteinas}{subsection.3.7}% 16
-\BOOKMARK [2][-]{subsection.3.8}{Cronograma}{section.3}% 17
-\BOOKMARK [1][-]{section.4}{Algoritmos e implementaci\363n computacional}{}% 18
-\BOOKMARK [1][-]{section.5}{Resultados}{}% 19
-\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 20
-\BOOKMARK [1][-]{section.7}{Ap\351ndice}{}% 21
+\BOOKMARK [1][-]{section.4}{Algoritmos e implementaci\363n computacional}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Prerrequisitos}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Obtener Secuencias}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.3}{Union de archivos fasta}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.4}{Alineamiento de Secuencias}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Alineamiento en Windows}{subsection.4.4}% 19
+\BOOKMARK [2][-]{subsection.4.5}{Lectura de Secuencias Alineadas}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.6}{Creaci\363n de la Matriz de Distancias}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.7}{Creaci\363n del Arbol Filogenetico}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.8}{Interfaz Grafica}{section.4}% 23
+\BOOKMARK [1][-]{section.5}{Resultados}{}% 24
+\BOOKMARK [2][-]{subsection.5.1}{Verificar la fiabilidad del \341rbol construido}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.2}{Analizar el \341rbol filogen\351tico}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Modelamiento de la Estrutura de Proteinas}{subsection.5.2}% 27
+\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 28
+\BOOKMARK [1][-]{section.7}{Ap\351ndice}{}% 29

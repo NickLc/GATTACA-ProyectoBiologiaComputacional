@@ -5,6 +5,11 @@
 from Bio import SeqIO
 import os
 
+
+def get_seq(specie_name):
+	"""Recibe el nombre de la secuencia y retorna el objeto secuencia"""
+	pass
+
 #========================================================================
 # Unir varios archivos fasta
 

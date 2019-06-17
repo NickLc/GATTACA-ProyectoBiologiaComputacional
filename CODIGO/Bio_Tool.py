@@ -6,9 +6,12 @@ from Bio import SeqIO
 import os
 
 
-def get_seq(specie_name):
+def get_record_seq(specie_name):
 	"""Recibe el nombre de la secuencia y retorna el objeto secuencia"""
-	pass
+	address = 'data_gen/fasta/'+specie_name+'.fasta'
+	record = SeqIO.read(address, "fasta")
+	return record
+	
 
 #========================================================================
 # Unir varios archivos fasta
@@ -61,25 +64,6 @@ def mover_archivo(dir_inicio, dir_final, filename):
     comando = 'move {}\{} {}\{}'.format(dir_inicio,filename, dir_final, filename)
     os.system(comando)
 
-#========================================================================
-
-
-# MUSCLE
-# ClustalW y ClustalW strict original para una máxima compatibilidad
-"""from Bio.Align.Applications import MuscleCommandline
-import subprocess
-
-def alinear_Secuencias(tipo='clwstrict'):
-Recibe un archivo fasta que contiene todas las secuencias elegidas
-Retorna el alineamiento, el tipo puede ser 'clw' o 'clwstrict'
-archivo_fasta = 'data_gen/Sec_Unidas.fasta'
-output = 'data_gen/Sec_Unidas.clustal'
-if tipo == 'clw':
-	print("Secuencias alineadas con clw")
-	#muscle_cline = MuscleCommandline(input=archivo_fasta, clw=True)
-if tipo == 'clwstrict':
-	print("Secuencias alineadas con clwstrict")
-	#muscle_cline = MuscleCommandline(input=archivo_fasta, clwstrict=True)"""
 
 #========================================================================
 

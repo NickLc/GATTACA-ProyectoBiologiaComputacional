@@ -32,7 +32,7 @@
 
 
 \begin{center}
-\includegraphics[width=5.5cm,height=6.5cm]{UNI.png}
+\includegraphics[width=5cm,height=6.5cm]{UNI.png}
 \end{center}
 \vspace*{0.2in}
 
@@ -48,7 +48,7 @@
 
 \begin{Large}
 \color{blue}
-\textbf{PhyloZofia\\}
+\textbf{GATTACA\\}
 \color{black}
 \end{Large}
 \vspace*{0.2in}
@@ -102,32 +102,38 @@ Lima - Peru\\
 \section{Resumen Ejecutivo}
 
 Se pretender crear una aplicación gráfica conectada a una base de datos con la información genética de las especies endémicas del Perú, el software procesara las secuencias, creará el árbol filogenético, mostrará los resultados y analizará las relaciones evolutivas de las especies escogidas.
-Se escogió como marcaadores moleculares a la proteína NADH deshidrogenasa subunidad 2 debido la importante función respiratoria mitocondrial, hecho por el cual tiene presencia en todas las especies escogidas.
-Se realizó el alineamiento utilizando la herramienta en linea EMBL-EBI.
-Se utilizó el modelo evolutivo Kimura y el método para la construcción de árbol escogido fue un método basado en agrupamiento.
-Se implementó el UPGMA y el método Unión de vecinos.
+Se escogió como marcaadores moleculares a la proteína NADH deshidrogenasa subunidad 2 debido la importante \textbf{función respiratoria mitocondrial}, hecho por el cual tiene presencia en todas las especies escogidas.
+Se realizó el alineamiento utilizando software Clustal Omega.
+Se utilizó el modelo evolutivo Kimura y el método para la construcción de árbol escogido fue un método basado en agrupamiento, de los cuales se implemento el método UPGMA y el método Unión de vecinos(NJ).
 
 \section{Descripción del Proyecto}
 
-El proyecto sera implementado netamente en el lenguaje Python
+El proyecto esta implementado netamente en el lenguaje Python
 Las librerías utilizadas serán:
 \begin{itemize}
 \item BioPython para el procesamiento de secuencias
 \item Tkinter para el entorno gráfico.
-\end{itemize}
-Dentro de la GUI, se pobre escoger Especies para el análisis posterior.\\
-Los datos recolectados serán reales de la base de datos de NCBI.\\
-Se implementara algoritmos para el alineamiento de Genes homólogos.\\
-Se implementara algoritmos para el alineamiento de Proteínas.\\
-Se implementara la algoritmos para la Generación de Arboles Filogenéticos de acuerdo a un modelo.\\
 
-\noindent Para el desarrollo del proyecto se seguirá la siguiente metodología:
+\end{itemize}
+
+\noindent El software incluye:
+\begin{itemize}
+
+\item Dentro de la GUI, se pobre escoger las especies para el análisis posterior.
+\item Datos reales recolectados de la base de datos de NCBI.
+\item Algoritmos implementados para el alineamiento de Genes homólogos.
+\item Algoritmos implementados para el alineamiento de Proteínas.
+\item Algoritmos para la Generación de Arboles Filogenéticos.
+
+\end{itemize}
+
+\noindent La \textbf{metodología} que se implanto para el desarrollo del proyecto es el siguiente:
 
 \subsection{Determinar las especies y el material a utilizar}
 
-Las especies se escogieron por ser especies endémicas del Perú, especias en \textbf{peligro de extinción} en el Perú y \textbf{especies representativas} del Perú. Además, se tuvo en cuenta la disponibilidad de material genético puesto que muchas de las especies endémicas poseen una base de datos genética incompleta y algunas no se encuentran codificadas en absoluto.\\
+Las especies se escogieron fueron especies endémicas del Perú, especias en \textbf{peligro de extinción} en el Perú y \textbf{especies representativas} del Perú. Además, se tuvo en cuenta la disponibilidad de material genético puesto que muchas de las especies endémicas poseen una base de datos genética incompleta y algunas no se encuentran codificadas en absoluto.\\
 
-\noindent El material genetico se encuentran en la base de datos de NCBI, se los nombres son un enlace para poder optener más información en NCBI.\\
+\noindent El material genetico se encuentran en la base de datos de NCBI, los nombres son un enlace para poder optener más información en NCBI.\\
 
 \noindent Se escogió las siguientes 11 especies:
 \begin{itemize}
@@ -179,7 +185,7 @@ obtención de un árbol correcto.
 \end{itemize}
 
 
-\subsubsection*{Proteina NADH deshidrogenasa}
+\subsubsection{Proteina NADH deshidrogenasa}
 
 La proteína a analizarse sera el NADH deshidrogenasa, también conocido como Complejo I, subunidad 2 debido a que se encuentra presente en todas las especias y está codificado. \\
 La proteína escogida cumple una importante \textbf{función en la respiración bacteriana y mitocondrial}. Por ende, es posible encontrarla en diversas especies y no es extraño que se haya codificado.\\
@@ -196,35 +202,41 @@ Una importante observación es que no todas las especies se encuentran codificad
 Este paso es el mas importante de todas, ya que éste establece las correspondencias posicionales en la evolución.\\
 Sólo el alineamiento correcto produce inferencias filogenéticas
 correctas.
-\subsubsection*{EMBL-EBI}
-Para la alineación de secuencias se utilizada la Web de EMBL-EBI: \textbf{Multiple Sequence Alignment} 
-\href{https://www.ebi.ac.uk/Tools/msa/muscle/}{\underline{click aquí para consultar la pagina}}
-\\
-Las secuencias se enviaran a la Web, esta realizara la alineación luego se descargara los resultados en formato clustal.
-\\
-Cuando descargamos el archivo tiene el siguiente formato ".clwstrict" luego cambiamos a ".clustal".
+\subsubsection*{Clustalo Omega}
+Para el alineamiento de secuencias se utilizo el software de Clustalo Omega.
+Utilizando el siguiente comando:
+\begin{center}
+	'clustalo.exe -i filename -o salida --outfmt=clu '
+\end{center}
+Donde en filename se encuentran las secuencias y salida es el archivo con las secuencias alineadas.\\
 
-\subsubsection*{Clustalo}
-Para usuarios de Ubunto se utilizara el software de clustal.
+
+\noindent El programa \href{http://www.clustal.org/omega/}{Clustalo Omega} se encuentra tanto para windows, Linux y Mac, además se utiliza en mismo comando para realizar el alineamiento en cualquier SO.
+
+\subsubsection*{EMBL-EBI}
+En caso que no se quiera descargar el software se puede utilizar la herramiento web de EMBL-EBI \href{https://www.ebi.ac.uk/Tools/msa/muscle/}{\underline{Multiple Sequence Alignment}}.
+
+\noindent Donde filename se enviaran a la Web, esta realizara la alineación luego se descargara los resultados en formato clustal.\\
 
 \subsection{Modelo Evolutivo Kimura}
-Ya que se quiere resultados lo más sofisticado (realista) se optara por el \textbf{Modelo Kimura}.
-Este modelo considera \textbf{diferentes las tasas de mutación} para las transiciones (substitución de una purina por otra o una pirimidinas por otra) y para las transversiones (substitución de una purina por una pirimidina o vice versa)\\
+Ya que se quiere resultados lo más sofisticado (realista) se opto por el \textbf{Modelo Kimura}.
+Este modelo considera \textbf{diferentes las tasas de mutación} para las transiciones (substitución de una purina por otra o una pirimidinas por otra) y para las transversiones (substitución de una purina por una pirimidina o vice versa).\\
 
-De acuerdo a este modelo las transiciones ocurren más frecuentemente que las transversiones, lo cual provee mejores estimaciones de la distancia evolutiva
+De acuerdo a este modelo las transiciones ocurren más frecuentemente que las transversiones, lo cual provee mejores estimaciones de la distancia evolutiva.
 
 
 \subsubsection{Construcción de la matriz de distancias}
 A partir del modelo Kimura tenemos:\\
-
-$d_{AB} = −(1/2) ln(1 − 2p_{ti} − p_{tv}) − (1/4) ln(1 − 2p_{tv})$\\
+\begin{center}
+	$d_{AB} = −\frac{1}{2} ln(1 − 2p_{ti} − p_{tv}) − \frac{1}{4} ln(1 − 2p_{tv})$
+	
+\end{center}
 
 \noindent Donde:\\
 $p_{ti}$ es la frecuencia observada de transición.\\
 $p_{tv}$ es la frecuencia de transversión.\\
 
-\noindent Las distancias evolutivas calculadas pueden ser usadas para
-construir una matriz de distancias entre todos los pares de taxones
+\noindent Las distancias evolutivas calculadas son usadas para construir una matriz de distancias entre todos los pares de taxones.
 
 \subsection{Métodos para la construcción de árbol filogenético}	
 
@@ -242,13 +254,12 @@ secuencias más similares.
 \subsubsection*{Métodos basados en optimalidad}
 
 Los algoritmos basados en optimalidad comparan muchas
-topologías alternativas de árboles y seleccionan el que tenga el
-mejor ajuste entre las distancias estimadas en el árbol y las
-distancias evolutivas reales
+topologías alternativas de árboles y seleccionan el que tenga el mejor ajuste entre las distancias estimadas en el árbol y las distancias evolutivas reales
+\\
 
-\noindent Los metodos basados en optimalidad requieren \textbf{mucha capacidad de computo} debido a la búsqueda exhaustiva que realizan, por ello se optó por escoger basados en agrupamiento.
+\noindent Los metodos basados en optimalidad requieren \textbf{mucha capacidad de computo} debido a la búsqueda exhaustiva que realizan, por ello se optó por escoger los metodos basados en agrupamiento.
 
-\noindent El usuario podra escoger dos metodos, a partir de la interfaz grafica:
+\noindent El usuario podra escoger dos metodos, a partir de la interfaz grafica y seran los siguiente:
 \subsubsection{UPGMA}
 UPGMA (unweighted pair group method using arithmetic average)
 El método más simple basado en agrupamiento.
@@ -256,29 +267,29 @@ El método más simple basado en agrupamiento.
 \subsubsection{Unión de Vecinos}
 El método de "Unión de vecinos" parte de una matriz de distancias, que indica la distancia entre cada par de taxones. El algoritmo comienza con un árbol completamente sin resolver, cuya topología corresponde a la de una red en estrella, y aplica los siguientes pasos hasta que el árbol está completamente resuelto y las longitudes de sus ramas.\\
 
-\noindent Ahora que ya sabemos los pasos para la creación de arboles filogeneticos pasamos a la implementación.
+\noindent Ahora que ya sabemos los pasos para la creación de arboles filogeneticos pasamos a la implementación computacional.
 
 
 \section{Algoritmos e implementación computacional}
-\textbf{Una descripción de los algoritmos y herramientas que se [planean utilizar en caso de la propuesta] utilizados incluyendo pseudo código y código fuente}\\
+Para poder replicar el proyecto se necesitan ciertos requisitos.
 \subsection{Prerrequisitos}
 
-Los prerrequisitos para repliacar el proyecto son:
-\subsubsection*{Python}
-Instalar python desde \href{https://www.python.org/downloads/}{\underline{Python}} para windows o 'sudo apt-get install python3.6' para linux.
-\subsubsection*{BioPython}
+Los prerrequisitos son los siguientes:
+\subsubsection*{Instalar Python}
+Instalar python desde \href{https://www.python.org/downloads/}{\underline{Python}} para Windows o 'sudo apt-get install python3.6' para Linux.
+\subsubsection*{Instalar BioPython}
 BioPython es un paquete Python muy popular para manejar información biologica.
 Para instalar:
+\begin{itemize}
+	\item conda install biopython
+	\item pip install biopython
+\end{itemize}
 
-conda install biopython
-ó
-pip install biopython
-
-BioPython tiene tres funcionalidades principales:
+\noindent BioPython tiene tres funcionalidades principales:
 Sequence Handling, 3D Structure, Population Genetics.
 
 
-\noindent Antes de pasar con la implemetacion necesitamos saber con que tipo de datos vamos a trabajar, estos datos se encuentran en  archivos con terminación fasta, xml, clustal, etc. Para establecer un orden y facilidad el mantenimiento de los algoritmos estos se encontraran en una carpeta \textbf{data-gen}.
+\noindent Antes de pasar con la implemetacion necesitamos saber con que tipo de datos vamos a trabajar, estos datos se encuentran en  archivos con terminación fasta, xml, clustal, etc. Para establecer un orden y facilidad en el mantenimiento de los algoritmos estos se encontraran en una carpeta llamada \textbf{data-gen}.
 
 \subsection{Obtener Secuencias}
 \noindent Si usted quiere replicar el proyecto con otras especies, lo unico que tiene que hacer es descargar sus secuencias en formato .fasta de NCBI y agregarlas al directorio data-gen/fasta, ver la siguiente imagen.
@@ -289,7 +300,7 @@ Sequence Handling, 3D Structure, Population Genetics.
 	Fig. Descargar la secuencia .fasta haciendo click en \underline{FASTA}
 \end{center}
 
-\noindent BioPython ya tienen implementado algunos algoritmo para el manejo y alineamiento de secuencias, creacion de arboles estos nos facilitan el trabajo, ya no se tiene que inventar la rueda.
+\noindent BioPython ya tienen implementado algunos algoritmo para el manejo y alineamiento de secuencias, creacion de arboles estos nos facilitan el trabajo.
 
 \subsection{Union de archivos fasta}
 
@@ -307,22 +318,21 @@ Ahora que tenemos las secuencias unidas en un solo archivo pasamos a alinearlas.
 
 \noindent Al alinear dos o más secuencias podemos observar las partes donde ellas difieren e inferir información útil sobre ellas
 
+
 \noindent Un tipo de información útil es la filogenia. Esto implica que podemos inferir cómo la evolución puede explicar un conjunto particular de secuencias observadas
 
-Para el alineamiento se utilizara la herramienta \href{http://www.clustal.org/}{\underline{Clustal}} este nos proporciona el alineamiento tanto para Windows como para Linux.
 
-\subsubsection{Alineamiento en Windows}
-Si estamos usando windows usamos \href{http://www.clustal.org/omega/}{\underline{Clustal Omega}}, una vez descargado el programa podemos hacer uso de este revisando el archivo README que viene con el programa.
+\subsubsection{Alineamiento Multiple}
+Como se esta usando Clustalo Omega en el algoritmo se hara uso de un comando que realize el alineamiento, tambien se pueden encontrar otras herramientas revisando el REEDME que proporciana a la hora de la descarga.\\
   
-\noindent El algoritmo para la implementacion recibe el archivo de las secuencias unidas y genera un archivo \textbf{.clustal} con el alineamiento, se hace uso de comandos de sistema. \\
-
+\noindent El algoritmo para la implementacion recibe el archivo de las secuencias unidas y genera un archivo \textbf{.clustal} con el alineamiento, se hace uso de comandos de sistema. 
  
 \begin{center}
-	\includegraphics[width=16cm,height=7cm]{Alin_Sec.png}
+	\includegraphics[width=16cm,height=6.5cm]{Alin_Sec.png}
 \end{center}
 
 \subsection{Lectura de Secuencias Alineadas}
-Para poder hacer uso de las secuencias alineadas tenemos que almacenarla en una variable o tambien llamado objeto alineamiento. El siguiente algoritmo recibe la direccion del archivo clusta y retorna el objeto aligment.
+Para poder hacer uso de las secuencias alineadas tenemos que almacenarla en una variable o tambien llamado objeto alineamiento. El siguiente algoritmo recibe la direccion del archivo clustal y retorna el objeto aligment.
 
 \begin{center}
 	\includegraphics[width=16cm,height=7cm]{leerAlin.png}
@@ -330,12 +340,12 @@ Para poder hacer uso de las secuencias alineadas tenemos que almacenarla en una 
 
 
 \subsection{Creación de la Matriz de Distancias}
-Usando el parsing del alienamiento , podemos obtener la distancia (o diferencia) entre todas las secuencias.
+Usando el parsing del alienamiento podemos obtener la distancia (o diferencia) entre todas las secuencias.
 
-Esto nos indica, para cada par de secuencias, cuan diferentes son.
+Esto nos indica, para cada par de secuencias cuan diferentes son.
 Para el caso ejemplo usamos como parametro 'identity', tambien esta el parametro 'blosum62' que toma diferentes valores de transición y transversión. 
 \begin{center}
-	\includegraphics[width=16cm,height=5cm]{matriz.png}
+	\includegraphics[width=16cm,height=4cm]{matriz.png}
 \end{center}
 
 \subsection{Creación del Arbol Filogenetico}
@@ -367,9 +377,9 @@ Para la interfaz grafica se utiliza las siguientes librerias, estas ya vienen po
 
 \end{itemize}
 No se muestra el codigo porque posee demasiadas lineas. La intefaz final se muestra en la siguiente imagen.
-\begin{center}
-	\includegraphics[width=11cm,height=5cm]{InterfazFinal.png}
-\end{center}
+%\begin{center}
+%	\includegraphics[width=11cm,height=5cm]{InterfazFinal.p%ng}
+%\end{center}
 
 
 

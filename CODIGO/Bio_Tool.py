@@ -87,7 +87,7 @@ from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
 
 def create_Tree(alignment, tipo = 'upgma'):
 	"""Se recibe de entrada el alimenamiento y el tipo de arbol nj o upgma 
-	Genera ell arbol filogenetico 
+	Genera el arbol filogenetico 
 	"""
 	print('Creando el arbol filogenetico ......')
 	# 3. Creamos la matriz de distancias

@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+ Autores: Lázaro Camasca Edson Nicks
+           León Ríos Marco Naro
+ Curso: CC471 - Biologia Computacional
+ Proyecto : GATTACA
+ Periodo : 2019 - I 
+"""
 
 from tkinter import *
 from tkinter import messagebox
@@ -18,6 +25,13 @@ class SpecieOption():
         La clase SpecieOption contiene en una fila las opciones para una especie,
         cono el checkButton(contiene etiqueta), botones. """
 
+    """
+        Autores: Lázaro Camasca Edson Nicks
+                León Ríos Marco Naro
+        Curso: CC471 - Biologia Computacional
+        Proyecto : GATTACA
+        Periodo : 2019 - I 
+        """
     def __init__(self, master, txt):
         self.state = BooleanVar()
         self.master = master
@@ -132,6 +146,13 @@ class SpecieOption():
         
 
 class ThreeOption():
+    """
+        Autores: Lázaro Camasca Edson Nicks
+                León Ríos Marco Naro
+        Curso: CC471 - Biologia Computacional
+        Proyecto : GATTACA
+        Periodo : 2019 - I 
+        """
     def __init__(self, master):
         self.master = master
 
@@ -181,7 +202,13 @@ class AlingOption():
     """
         AlingOption es la clase que contiene la etiqueta(title) y botones para análisis del alineamiento
         recibe un frame o ventana, y la lista de opciones (sequencias escogidas)"""
-
+    """
+        Autores: Lázaro Camasca Edson Nicks
+                León Ríos Marco Naro
+        Curso: CC471 - Biologia Computacional
+        Proyecto : GATTACA
+        Periodo : 2019 - I 
+        """
     def __init__(self, master):
         
         self.master = master
@@ -221,12 +248,12 @@ class AlingOption():
             title_windows = 'Aligment Multiple'
             windows_seq = Toplevel(self.master)
             windows_seq.title(title_windows)
-            windows_seq.geometry('650x350')
+            windows_seq.geometry('680x350')
             
             info_frame = Frame(windows_seq)
             title_label = Label(info_frame, text = title_windows, font = ('Calibri Bold', 14))
 
-            chosen_scroll = scrolledtext.ScrolledText(info_frame, width=65, height=10)
+            chosen_scroll = scrolledtext.ScrolledText(info_frame, width=75, height=10)
             chosen_scroll.delete(1.0, END)
             chosen_scroll.insert(INSERT,aln)
 
@@ -239,13 +266,19 @@ class AlingOption():
         self.multiple_alingmnt_button.grid(column = col+2, row = rw, padx=10, pady=4)
 
 class BioApp():
-
+    """
+        Autores: Lázaro Camasca Edson Nicks
+                León Ríos Marco Naro
+        Curso: CC471 - Biologia Computacional
+        Proyecto : GATTACA
+        Periodo : 2019 - I 
+        """
     def __init__(self):
         self.chosen_species = []   #Lista de diccionarios, {index, name}
         self.root = Tk()
         self.root.title('GATTACA')
         
-        background_image = ImageTk.PhotoImage(Image.open('gattaca-logo.png'))
+        background_image = ImageTk.PhotoImage(Image.open('data_gen/gattaca-logo.png'))
         w = background_image.width()
         h = background_image.height()
         self.root.geometry("{}x{}+{}+{}".format(w, h+150, 100, 100))

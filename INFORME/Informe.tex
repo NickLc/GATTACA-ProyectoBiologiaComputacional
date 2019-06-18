@@ -365,9 +365,9 @@ Para mostrar el arbol usamos la funcion \textbf{Phylo.draw()}, a partir de este 
 	\includegraphics[width=11cm,height=5cm]{mostrarArbol.png}
 \end{center}
 
-\subsection{Interfaz Grafica}
-\noindent Todos estos algoritmos y otros se encuentran como funciones en una libreria llamada \textbf{BioTool}, el cual es usado en la implementacion de la interfaz grafica.
-Para la interfaz grafica se utiliza las siguientes librerias, estas ya vienen por defecto con python.
+\subsection{Interfaz Gráfica}
+\noindent Todos estos algoritmos y otros se encuentran como funciones en una libreria llamada \textbf{BioTool}, el cual es usado en la implementacion de la interfaz gráfica.
+Para la interfaz gráfica se utiliza las siguientes librerias, estas ya vienen por defecto con python.
 \begin{itemize}
 
 \item from tkinter import *
@@ -377,28 +377,60 @@ Para la interfaz grafica se utiliza las siguientes librerias, estas ya vienen po
 
 \end{itemize}
 No se muestra el codigo porque posee demasiadas lineas. La intefaz final se muestra en la siguiente imagen.
-%\begin{center}
-%	\includegraphics[width=11cm,height=5cm]{InterfazFinal.p%ng}
-%\end{center}
 
+\begin{center}
+	\includegraphics[width=11cm,height=10cm]{InterfazFinal.png}
+\end{center}
+
+Donde se puede visualizar que se seleccionaron las especies, y se genero el archivo fasta, con la unión de todas las secuencias de proteina de las especies elegidas.
+
+El boton seq genera una ventana con la información de la secuencia buscador de nucleotidos por posicion y por bloqes para el análisis.
+
+\begin{center}
+	\includegraphics[width=15cm,height=8cm]{boton-seq.png}
+\end{center}
+
+El boton info muestra inforamción de la especie, tales como el nombre común, ubicación de la especie, Taxonomia, Estado de conservación.
+
+\begin{center}
+	\includegraphics[width=17cm,height=10cm]{info.png}
+\end{center}
+
+El boton multiple, genera el alineamiento multiple de las secuencias, genera una ventana con el alineamiento.
+
+\begin{center}
+	\includegraphics[width=12cm,height=4cm]{multiple.png}
+\end{center}
 
 
 \section{Resultados}
 Una descripción de los resultados [esperados en el caso de la propuesta]. Un reporte integrando los resultados proporcionados por la herramienta
 
 \subsection{Verificar la fiabilidad del árbol construido}
-Para la fase beta se encontro el siguiente arbol.
+Para la fase beta se encontró el siguiente árbol.
 
 \begin{center}
 	\includegraphics[width=12.5cm,height=8.5cm]{arbol.png}
 	
-	Fig. Arbol utilizando el metodo UPGMA
+	Fig. Árbol utilizando el método UPGMA
 \end{center}
 
-\subsection{Analizar el árbol filogenético}
-Apartir del arbol filogenetico se podra descubrir/Mostrar/Analizar las relaciones evoluticas de las especies endemicas escogidas.
+\subsection{Análizar el árbol filogenético}
+Para diferentes métodos son diferentes los árboles generados. Es importante escoger la misma proteína para todas las especies.
+
+Sin embargo, es importante notar que, en ambos árboles, los mamíferos se encuentran más cerca de los mamíferos y los oviparos más cerca de los mamíferos. Además, dentro del grupo de los mamíferos, los felinos muestran estár más cerca entre ellos. Un caso similar a ello es el de los auquénidos.
+
+\begin{center}
+	\includegraphics[width=15.5cm,height=8.5cm]{tree_comparation.png}
+	
+	Fig. Comparación entre árboles UPGMA y Neighbor
+\end{center}
+
+
+
+
 \subsubsection{Modelamiento de la Estrutura de Proteinas}
-En el analisis se encuentra el modelamiento de la Estructura de Proteinas
+En el análisis se encuentra el modelamiento de la Estructura de Proteinas
 
 \section{Conclusiones}
 Incluye las ventajas y desventajas del enfoque utilizado, aspectos inesperados del proyecto, trabajo futuro, etc.

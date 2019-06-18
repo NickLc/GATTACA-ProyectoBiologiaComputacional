@@ -1,0 +1,32 @@
+<phyloxml xmlns="http://www.phyloxml.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.phyloxml.org http://www.phyloxml.org/1.10/phyloxml.xsd">
+  <phylogeny rooted="true">
+    <clade>
+      <name>Inner3</name>
+      <branch_length>0</branch_length>
+      <clade>
+        <name>Inner2</name>
+        <branch_length>0.03638328530259366</branch_length>
+        <clade>
+          <name>Inner1</name>
+          <branch_length>0.026657060518731984</branch_length>
+          <clade>
+            <name>MONO</name>
+            <branch_length>0.13976945244956773</branch_length>
+          </clade>
+          <clade>
+            <name>AIY56286.1</name>
+            <branch_length>0.13976945244956773</branch_length>
+          </clade>
+        </clade>
+        <clade>
+          <name>NP_944712.1</name>
+          <branch_length>0.16642651296829972</branch_length>
+        </clade>
+      </clade>
+      <clade>
+        <name>AJE26518.1</name>
+        <branch_length>0.20280979827089338</branch_length>
+      </clade>
+    </clade>
+  </phylogeny>
+</phyloxml>

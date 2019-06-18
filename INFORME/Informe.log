@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.27)  10 JUN 2019 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.27)  18 JUN 2019 02:24
 entering extended mode
 **./Informe.tex
 (Informe.tex
@@ -893,27 +893,63 @@ File: mostrarArbol.png Graphic file (type png)
 Package pdftex.def Info: mostrarArbol.png  used on input line 365.
 (pdftex.def)             Requested size: 312.9928pt x 142.26617pt.
 [8 <./matriz.png> <./CrearArbol.png>]
-<arbol.png, id=243, 353.06906pt x 211.54031pt>
+<InterfazFinal.png, id=243, 383.93437pt x 362.85562pt>
+File: InterfazFinal.png Graphic file (type png)
+<use InterfazFinal.png>
+Package pdftex.def Info: InterfazFinal.png  used on input line 382.
+(pdftex.def)             Requested size: 313.00041pt x 284.53223pt.
+<boton-seq.png, id=244, 550.30594pt x 329.73187pt>
+File: boton-seq.png Graphic file (type png)
+<use boton-seq.png>
+Package pdftex.def Info: boton-seq.png  used on input line 390.
+(pdftex.def)             Requested size: 426.80179pt x 227.62592pt.
+ [9 <./mostrarArbol.png> <./InterfazFinal.png>]
+<info.png, id=251, 612.78937pt x 360.59718pt>
+File: info.png Graphic file (type png)
+<use info.png>
+Package pdftex.def Info: info.png  used on input line 396.
+(pdftex.def)             Requested size: 483.69623pt x 284.52751pt.
+
+Overfull \hbox (56.90488pt too wide) in paragraph at lines 396--397
+ [] 
+ []
+
+<multiple.png, id=252, 494.59781pt x 176.15813pt>
+File: multiple.png Graphic file (type png)
+<use multiple.png>
+Package pdftex.def Info: multiple.png  used on input line 402.
+(pdftex.def)             Requested size: 341.43134pt x 113.81061pt.
+[10 <./boton-seq.png> <./info.png>]
+<arbol.png, id=259, 462.528pt x 344.0052pt>
 File: arbol.png Graphic file (type png)
 <use arbol.png>
-Package pdftex.def Info: arbol.png  used on input line 393.
-(pdftex.def)             Requested size: 355.6649pt x 241.85565pt.
- [9 <./mostrarArbol.png> <./arbol.png>]
-[10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
+Package pdftex.def Info: arbol.png  used on input line 413.
+(pdftex.def)             Requested size: 355.67479pt x 241.84656pt.
+<tree_comparation.png, id=260, 804.75656pt x 326.72063pt>
+File: tree_comparation.png Graphic file (type png)
+<use tree_comparation.png>
+Package pdftex.def Info: tree_comparation.png  used on input line 424.
+(pdftex.def)             Requested size: 441.00885pt x 241.84425pt.
+
+Overfull \hbox (14.2175pt too wide) in paragraph at lines 424--425
+ [] 
+ []
+
+[11 <./multiple.png> <./arbol.png>] [12 <./tree_comparation.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
  (Informe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
 Package rerunfilecheck Info: File `Informe.out' has not changed.
-(rerunfilecheck)             Checksum: CA83F01B92ABC43AEE89F62CC740BE58;2319.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
+(rerunfilecheck)             Checksum: 432984201BB345C5DBC605538DDA8BF7;2325.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
  ) 
 Here is how much of TeX's memory you used:
- 18853 strings out of 493305
- 339731 string characters out of 3129802
- 422940 words of memory out of 3000000
- 22014 multiletter control sequences out of 15000+200000
+ 18879 strings out of 493305
+ 340186 string characters out of 3129802
+ 422939 words of memory out of 3000000
+ 22034 multiletter control sequences out of 15000+200000
  8716 words of font info for 22 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,6n,56p,474b,605s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -928,9 +964,9 @@ type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
 y10.pfb>
-Output written on Informe.pdf (11 pages, 4349017 bytes).
+Output written on Informe.pdf (13 pages, 4741664 bytes).
 PDF statistics:
- 569 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 587 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
+ 328 words of extra memory for PDF output out of 10000 (max. 10000000)
 

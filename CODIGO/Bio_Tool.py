@@ -1,7 +1,13 @@
 # coding: utf-8
 
 # # Proyecto Biologia Computacional
-
+"""
+ Autores: Lázaro Camasca Edson Nicks
+           León Ríos Marco Naro
+ Curso: CC471 - Biologia Computacional
+ Proyecto : GATTACA
+ Periodo : 2019 - I 
+"""
 from Bio import SeqIO
 import os
 

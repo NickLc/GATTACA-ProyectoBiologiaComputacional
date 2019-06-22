@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.27)  18 JUN 2019 02:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.27)  21 JUN 2019 21:12
 entering extended mode
 **./Informe.tex
 (Informe.tex
@@ -640,7 +640,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(Informe.aux)
+(Informe.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `Informe.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -745,7 +758,7 @@ LaTeX Info: Redefining \nameref on input line 22.
 \@outlinefile=\write4
 \openout4 = `Informe.out'.
 
-<UNI.png, id=126, 1204.5pt x 1514.65875pt>
+<UNI.png, id=142, 1204.5pt x 1514.65875pt>
 File: UNI.png Graphic file (type png)
 <use UNI.png>
 Package pdftex.def Info: UNI.png  used on input line 35.
@@ -783,7 +796,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
  []
 
 [2]
-<NADH.png, id=189, 1626.075pt x 1626.075pt>
+<NADH.png, id=209, 1626.075pt x 1626.075pt>
 File: NADH.png Graphic file (type png)
 <use NADH.png>
 Package pdftex.def Info: NADH.png  used on input line 195.
@@ -825,13 +838,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-<ncbi_replica.png, id=209, 576.65437pt x 350.05782pt>
+<ncbi_replica.png, id=229, 576.65437pt x 350.05782pt>
 File: ncbi_replica.png Graphic file (type png)
 <use ncbi_replica.png>
 Package pdftex.def Info: ncbi_replica.png  used on input line 298.
 (pdftex.def)             Requested size: 355.67421pt x 241.85529pt.
 [5]
-<join_Fasta.png, id=217, 740.0147pt x 341.02406pt>
+<join_Fasta.png, id=237, 740.0147pt x 341.02406pt>
 File: join_Fasta.png Graphic file (type png)
 <use join_Fasta.png>
 Package pdftex.def Info: join_Fasta.png  used on input line 312.
@@ -846,7 +859,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
  []
 
-<Alin_Sec.png, id=225, 740.7675pt x 318.43968pt>
+<Alin_Sec.png, id=245, 740.7675pt x 318.43968pt>
 File: Alin_Sec.png Graphic file (type png)
 <use Alin_Sec.png>
 Package pdftex.def Info: Alin_Sec.png  used on input line 331.
@@ -856,7 +869,7 @@ Overfull \hbox (28.45581pt too wide) in paragraph at lines 331--332
  [] 
  []
 
-<leerAlin.png, id=226, 740.0147pt x 273.27094pt>
+<leerAlin.png, id=246, 740.0147pt x 273.27094pt>
 File: leerAlin.png Graphic file (type png)
 <use leerAlin.png>
 Package pdftex.def Info: leerAlin.png  used on input line 338.
@@ -867,7 +880,7 @@ Overfull \hbox (28.45613pt too wide) in paragraph at lines 338--339
  []
 
 [7 <./Alin_Sec.png> <./leerAlin.png>]
-<matriz.png, id=233, 737.75626pt x 159.59625pt>
+<matriz.png, id=253, 737.75626pt x 159.59625pt>
 File: matriz.png Graphic file (type png)
 <use matriz.png>
 Package pdftex.def Info: matriz.png  used on input line 348.
@@ -877,7 +890,7 @@ Overfull \hbox (28.45142pt too wide) in paragraph at lines 348--349
  [] 
  []
 
-<CrearArbol.png, id=234, 747.54282pt x 417.05812pt>
+<CrearArbol.png, id=254, 747.54282pt x 417.05812pt>
 File: CrearArbol.png Graphic file (type png)
 <use CrearArbol.png>
 Package pdftex.def Info: CrearArbol.png  used on input line 356.
@@ -887,86 +900,263 @@ Overfull \hbox (28.45627pt too wide) in paragraph at lines 356--357
  [] 
  []
 
-<mostrarArbol.png, id=235, 467.49657pt x 296.60812pt>
+<mostrarArbol.png, id=255, 467.49657pt x 296.60812pt>
 File: mostrarArbol.png Graphic file (type png)
 <use mostrarArbol.png>
 Package pdftex.def Info: mostrarArbol.png  used on input line 365.
 (pdftex.def)             Requested size: 312.9928pt x 142.26617pt.
 [8 <./matriz.png> <./CrearArbol.png>]
-<InterfazFinal.png, id=243, 383.93437pt x 362.85562pt>
+<difraccion.jpg, id=264, 250.9375pt x 289.08pt>
+File: difraccion.jpg Graphic file (type jpg)
+<use difraccion.jpg>
+Package pdftex.def Info: difraccion.jpg  used on input line 387.
+(pdftex.def)             Requested size: 142.27005pt x 142.26357pt.
+
+Overfull \hbox (6.43509pt too wide) in paragraph at lines 394--395
+\T1/cmr/m/n/10 sueltas (posi-ciones 3D de áto-mos de biomolécu-las) se han de-p
+osi-tado en la [][]$[]$[][]. 
+ []
+
+[9 <./mostrarArbol.png> <./difraccion.jpg>]
+<PDB.png, id=273, 671.50874pt x 122.70844pt>
+File: PDB.png Graphic file (type png)
+<use PDB.png>
+Package pdftex.def Info: PDB.png  used on input line 420.
+(pdftex.def)             Requested size: 455.24689pt x 85.36168pt.
+
+Overfull \hbox (28.45554pt too wide) in paragraph at lines 420--421
+ [] 
+ []
+
+<parse.png, id=274, 717.43031pt x 243.91125pt>
+File: parse.png Graphic file (type png)
+<use parse.png>
+Package pdftex.def Info: parse.png  used on input line 434.
+(pdftex.def)             Requested size: 483.70816pt x 170.7181pt.
+
+Overfull \hbox (56.91681pt too wide) in paragraph at lines 434--435
+ [] 
+ []
+
+<cleandir.png, id=275, 743.02594pt x 91.09032pt>
+File: cleandir.png Graphic file (type png)
+<use cleandir.png>
+Package pdftex.def Info: cleandir.png  used on input line 442.
+(pdftex.def)             Requested size: 455.25192pt x 73.9801pt.
+
+Overfull \hbox (28.46057pt too wide) in paragraph at lines 442--443
+ [] 
+ []
+
+[10 <./PDB.png> <./parse.png> <./cleandir.png>]
+<struct.png, id=283, 466.74374pt x 408.02437pt>
+File: struct.png Graphic file (type png)
+<use struct.png>
+Package pdftex.def Info: struct.png  used on input line 448.
+(pdftex.def)             Requested size: 455.26204pt x 227.62045pt.
+
+Overfull \hbox (28.47069pt too wide) in paragraph at lines 448--449
+ [] 
+ []
+
+<JProtein.png, id=284, 456.20438pt x 86.57344pt>
+File: JProtein.png Graphic file (type png)
+<use JProtein.png>
+Package pdftex.def Info: JProtein.png  used on input line 477.
+(pdftex.def)             Requested size: 341.4424pt x 56.90613pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+<scriptView.png, id=285, 590.205pt x 112.92188pt>
+File: scriptView.png Graphic file (type png)
+<use scriptView.png>
+Package pdftex.def Info: scriptView.png  used on input line 487.
+(pdftex.def)             Requested size: 455.25175pt x 93.89914pt.
+
+Overfull \hbox (28.4604pt too wide) in paragraph at lines 487--488
+ [] 
+ []
+
+[11 <./struct.png> <./JProtein.png>]
+<protein0.png, id=292, 642.90187pt x 233.37187pt>
+File: protein0.png Graphic file (type png)
+<use protein0.png>
+Package pdftex.def Info: protein0.png  used on input line 493.
+(pdftex.def)             Requested size: 455.25691pt x 170.72325pt.
+
+Overfull \hbox (28.46556pt too wide) in paragraph at lines 493--494
+ [] 
+ []
+
+<bienvenida.png, id=293, 228.10219pt x 260.47313pt>
+File: bienvenida.png Graphic file (type png)
+<use bienvenida.png>
+Package pdftex.def Info: bienvenida.png  used on input line 512.
+(pdftex.def)             Requested size: 156.49268pt x 170.71646pt.
+<InterfazFinal.png, id=294, 383.93437pt x 362.85562pt>
 File: InterfazFinal.png Graphic file (type png)
 <use InterfazFinal.png>
-Package pdftex.def Info: InterfazFinal.png  used on input line 382.
+Package pdftex.def Info: InterfazFinal.png  used on input line 519.
 (pdftex.def)             Requested size: 313.00041pt x 284.53223pt.
-<boton-seq.png, id=244, 550.30594pt x 329.73187pt>
+[12 <./scriptView.png> <./protein0.png> <./bienvenida.png>]
+<boton-seq.png, id=303, 550.30594pt x 329.73187pt>
 File: boton-seq.png Graphic file (type png)
 <use boton-seq.png>
-Package pdftex.def Info: boton-seq.png  used on input line 390.
+Package pdftex.def Info: boton-seq.png  used on input line 527.
 (pdftex.def)             Requested size: 426.80179pt x 227.62592pt.
- [9 <./mostrarArbol.png> <./InterfazFinal.png>]
-<info.png, id=251, 612.78937pt x 360.59718pt>
+<info.png, id=304, 612.78937pt x 360.59718pt>
 File: info.png Graphic file (type png)
 <use info.png>
-Package pdftex.def Info: info.png  used on input line 396.
+Package pdftex.def Info: info.png  used on input line 533.
 (pdftex.def)             Requested size: 483.69623pt x 284.52751pt.
 
-Overfull \hbox (56.90488pt too wide) in paragraph at lines 396--397
+Overfull \hbox (56.90488pt too wide) in paragraph at lines 533--534
  [] 
  []
 
-<multiple.png, id=252, 494.59781pt x 176.15813pt>
+[13 <./InterfazFinal.png> <./boton-seq.png>]
+<multiple.png, id=311, 494.59781pt x 176.15813pt>
 File: multiple.png Graphic file (type png)
 <use multiple.png>
-Package pdftex.def Info: multiple.png  used on input line 402.
+Package pdftex.def Info: multiple.png  used on input line 539.
 (pdftex.def)             Requested size: 341.43134pt x 113.81061pt.
-[10 <./boton-seq.png> <./info.png>]
-<arbol.png, id=259, 462.528pt x 344.0052pt>
+<arbol.png, id=312, 462.528pt x 344.0052pt>
 File: arbol.png Graphic file (type png)
 <use arbol.png>
-Package pdftex.def Info: arbol.png  used on input line 413.
+Package pdftex.def Info: arbol.png  used on input line 550.
 (pdftex.def)             Requested size: 355.67479pt x 241.84656pt.
-<tree_comparation.png, id=260, 804.75656pt x 326.72063pt>
+ [14 <./info.png> <./multiple.png>]
+<tree_comparation.png, id=319, 804.75656pt x 326.72063pt>
 File: tree_comparation.png Graphic file (type png)
 <use tree_comparation.png>
-Package pdftex.def Info: tree_comparation.png  used on input line 424.
+Package pdftex.def Info: tree_comparation.png  used on input line 561.
 (pdftex.def)             Requested size: 441.00885pt x 241.84425pt.
 
-Overfull \hbox (14.2175pt too wide) in paragraph at lines 424--425
+Overfull \hbox (14.2175pt too wide) in paragraph at lines 561--562
  [] 
  []
 
-[11 <./multiple.png> <./arbol.png>] [12 <./tree_comparation.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
+
+ []
+
+<protein1.png, id=320, 750.55406pt x 502.87875pt>
+File: protein1.png Graphic file (type png)
+<use protein1.png>
+Package pdftex.def Info: protein1.png  used on input line 571.
+(pdftex.def)             Requested size: 455.24904pt x 341.43124pt.
+
+Overfull \hbox (28.45769pt too wide) in paragraph at lines 571--572
+ [] 
+ []
+
+[15 <./arbol.png> <./tree_comparation.png>]
+<ligando1.png, id=327, 544.28343pt x 426.84468pt>
+File: ligando1.png Graphic file (type png)
+<use ligando1.png>
+Package pdftex.def Info: ligando1.png  used on input line 583.
+(pdftex.def)             Requested size: 170.71103pt x 113.8102pt.
+<ligando4.png, id=328, 286.06876pt x 316.18124pt>
+File: ligando4.png Graphic file (type png)
+<use ligando4.png>
+Package pdftex.def Info: ligando4.png  used on input line 584.
+(pdftex.def)             Requested size: 113.81pt x 113.81068pt.
+<ligando2.png, id=329, 338.76563pt x 551.05875pt>
+File: ligando2.png Graphic file (type png)
+<use ligando2.png>
+Package pdftex.def Info: ligando2.png  used on input line 590.
+(pdftex.def)             Requested size: 142.26508pt x 199.17139pt.
+<ligando3.png, id=330, 688.82344pt x 442.65375pt>
+File: ligando3.png Graphic file (type png)
+<use ligando3.png>
+Package pdftex.def Info: ligando3.png  used on input line 591.
+(pdftex.def)             Requested size: 113.80862pt x 170.71602pt.
+ [16 <./protein1.png> <./ligando1.png> <./ligando4.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 601.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
+[][][]$\T1/cmtt/m/n/10 https : / / www . researchgate . net / publication / 316
+217579 _ BIOINFORMATICA _ EN _ EL _ AULA _
+ []
+
+
+Overfull \hbox (31.15396pt too wide) in paragraph at lines 608--609
+[][][]$\T1/cmtt/m/n/10 http : / / elviajedelnavegante . blogspot . com / 2015 /
+ 05 / generacion-[]de-[]arboles-[]filogeneticos .
+ []
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{cite.}) ha
+s been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.619 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.619 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.619 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{cite.}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.619 \end{document}
+                     <./ligando2.png> <./ligando3.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
  (Informe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 619.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 619.
 Package rerunfilecheck Info: File `Informe.out' has not changed.
-(rerunfilecheck)             Checksum: 432984201BB345C5DBC605538DDA8BF7;2325.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 440.
+(rerunfilecheck)             Checksum: C1ACC6E01DD809513E64A9F82F3B2158;2745.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
  ) 
 Here is how much of TeX's memory you used:
- 18879 strings out of 493305
- 340186 string characters out of 3129802
- 422939 words of memory out of 3000000
- 22034 multiletter control sequences out of 15000+200000
- 8716 words of font info for 22 fonts, out of 3000000 for 9000
+ 18986 strings out of 493305
+ 342107 string characters out of 3129802
+ 424001 words of memory out of 3000000
+ 22111 multiletter control sequences out of 15000+200000
+ 9029 words of font info for 23 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,6n,56p,474b,605s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,6n,56p,785b,605s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecbx1000.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecrm1200.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb>
-Output written on Informe.pdf (13 pages, 4741664 bytes).
+ectt1000.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecbx1000.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\ADMIN\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\ADMIN\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb>
+Output written on Informe.pdf (18 pages, 6712737 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
- 328 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 740 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

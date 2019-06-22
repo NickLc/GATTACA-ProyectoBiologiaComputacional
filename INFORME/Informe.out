@@ -21,10 +21,14 @@
 \BOOKMARK [2][-]{subsection.4.5}{Lectura de Secuencias Alineadas}{section.4}% 21
 \BOOKMARK [2][-]{subsection.4.6}{Creaci\363n de la Matriz de Distancias}{section.4}% 22
 \BOOKMARK [2][-]{subsection.4.7}{Creaci\363n del Arbol Filogenetico}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.8}{Interfaz Gr\341fica}{section.4}% 24
-\BOOKMARK [1][-]{section.5}{Resultados}{}% 25
-\BOOKMARK [2][-]{subsection.5.1}{Verificar la fiabilidad del \341rbol construido}{section.5}% 26
-\BOOKMARK [2][-]{subsection.5.2}{An\341lizar el \341rbol filogen\351tico}{section.5}% 27
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Modelamiento de la Estrutura de Proteinas}{subsection.5.2}% 28
-\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 29
-\BOOKMARK [1][-]{section.7}{Ap\351ndice}{}% 30
+\BOOKMARK [2][-]{subsection.4.8}{Modelamiento 3D de la Estrutura de Proteinas}{section.4}% 24
+\BOOKMARK [3][-]{subsubsection.4.8.1}{\277Qu\351 es una estructura?}{subsection.4.8}% 25
+\BOOKMARK [3][-]{subsubsection.4.8.2}{Archivo de Estructura}{subsection.4.8}% 26
+\BOOKMARK [3][-]{subsubsection.4.8.3}{Analizar Archivos de Estructura}{subsection.4.8}% 27
+\BOOKMARK [3][-]{subsubsection.4.8.4}{La visualizaci\363n de las estructuras en Cuadernos jupyter}{subsection.4.8}% 28
+\BOOKMARK [2][-]{subsection.4.9}{Interfaz Gr\341fica}{section.4}% 29
+\BOOKMARK [1][-]{section.5}{Resultados}{}% 30
+\BOOKMARK [2][-]{subsection.5.1}{Verificar la fiabilidad del \341rbol construido}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{An\341lizar el \341rbol filogen\351tico}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Modelamiento 3D de la Proteina}{subsection.5.2}% 33
+\BOOKMARK [1][-]{section.6}{Conclusiones}{}% 34

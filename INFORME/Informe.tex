@@ -365,6 +365,136 @@ Para mostrar el arbol usamos la funcion \textbf{Phylo.draw()}, a partir de este 
 	\includegraphics[width=11cm,height=5cm]{mostrarArbol.png}
 \end{center}
 
+\subsection{Modelamiento 3D de la Estrutura de Proteinas}
+
+En las secciones pasada se utilizaron herramientas para hacer frente a las secuencias biológicas y creación de arboles filogeneticos con ´BioPython´.
+
+\noindent El análisis de secuencia es muy importante, pero en última instancia, \textbf{la función biológica se determina por la estructura}. La gran cadena de texto(secuencia) no nos dice mucho acerca de cómo se puede hacer su función. Los biólogos estructurales son capaces de determinar lo que la secuencia se parece a cuando se toma su forma natural en la célula.
+
+\noindent Aquí es de esa secuencia de la \href{http://www.rcsb.org/pdb/protein/O75306}{\underline{estructura}} en 3D.
+
+Es evidente que hay mucha más información codificada en la secuencia que tenemos que considerar. Por ello solo vamos a extraer información útil a partir de esta proteína particular usando BioPython del ´PDB´ módulo.
+
+\subsubsection{¿Qué es una estructura?}
+
+Las biomoléculas tales como proteínas, ARN, ADN, y los productos químicos (tales como la dopamina) se componen de átomos.
+
+\noindent Cada átomo ocupa un punto en 4 dimensiones: X, Y, Z, y el tiempo. Por ahora vamos a olvidarse del tiempo y sólo se ocupan de shapshots fijos de átomos.
+
+\noindent Los biólogos estructurales aislar moléculas en el laboratorio, y el uso de herramientas tales como cristalografía de rayos X se puede obtener el X, Y, y Z de todos los átomos en la molécula.
+
+\begin{center}
+	\includegraphics[width=5cm,height=5cm]{difraccion.jpg}
+\end{center}
+
+Este es el famoso patrón de difracción de rayos X de ADN utilizado por Watson y Crick y Franklin para resolver la estructura de doble hélice del ADN.
+
+\noindent Otras tecnologías de resolución de notable estructura: microscopía electrónica, crio-microscopía electrónica, resonancia magnética nuclear (RMN).
+
+\noindent No tenemos que preocuparnos de cómo lo hicieron, pero desde hace muchos años, estructuras resueltas (posiciones 3D de átomos de biomoléculas) se han depositado en la \href{https://www.rcsb.org/}{\underline{base de datos PDB RCSB}}.
+
+\subsubsection{Archivo de Estructura}
+
+\textbf{Descarga de un archivo de estructura de la base de datos PDB}
+
+Debido a la falta de investigación de la proteina NADH deshidrogenasa en las especies endemicas elegidas, no se pudo obtener la data por ello el modelamiento 3d se realizara con el HomoSapiens \href{https://www.rcsb.org/structure/5XTB}{\underline{estructura 5XTB}}, tambien se tiene puede con otras especies como el ratón, oveja, toro, cerdo.
+
+\begin{itemize}
+
+
+\item Cada entrada en la base de datos tiene un código de identificación único.
+
+\item El transportador de deshidrogenasa que nos interesa es: 5XTB
+
+\item El formato del archivo principal de secuencias es \textbf{FASTA}, para las estructuras es \textbf{PDB} o \textbf{mmCIF}.
+
+\item BioPython.PDB tiene programas de análisis para ambos.
+
+\item \href{https://biopython.org/wiki/The_Biopython_Structural_Bioinformatics_FAQ}{\underline{Aquí}} es la página principal BioPython.PDB referencia.
+
+\item Podemos descargar automáticamente una estructura de la base de datos utilizando el \textbf{PDBList} método del objeto \textbf{retrieve\_pdb\_file}.
+	
+\end{itemize}
+
+\begin{center}
+	\includegraphics[width=16cm,height=3cm]{PDB.png}
+\end{center}
+
+Esa advertencia nos dice que el formato PDB es obsoleto y que el nuevo valor predeterminado es mmCIF.
+
+Vamos a entrar en lo que parece en un poco.
+
+Ahora deberíamos tener una carpeta que contiene 5XTB.cif en nuestro directorio de trabajo
+
+\subsubsection{Analizar Archivos de Estructura}
+
+Ahora vamos a extraer toda la información estructural a partir del archivo.
+
+\begin{center}
+	\includegraphics[width=17cm,height=6cm]{parse.png}
+\end{center}
+
+El primer argumento para el método de instancia get\_structurees un nombre opcional para la molécula, y el segundo argumento es la ruta de acceso al archivo de estructura.
+
+Vamos a echar un vistazo a los atributos.
+
+\begin{center}
+	\includegraphics[width=16cm,height=2.6cm]{cleandir.png}
+\end{center}
+
+Objetos de estructura se organizan en una jerarquía específica de objetos.
+
+\begin{center}
+	\includegraphics[width=16cm,height=8cm]{struct.png}
+\end{center}
+
+\noindent Sólo vamos a centrar en los elementos fundamentales que son: 
+
+Modelo $\rightarrow$ Cadena $\rightarrow$ Residuos $\rightarrow$ Atom.
+
+\begin{itemize}
+
+\item Cada archivo de estructura puede contener varios "modelos" de la misma molécula.
+\item Cada modelo contiene varios "cadenas" o hebras de proteína / ARN / ADN /.
+\item Cada "cadena" se compone de residuos, o aminoácidos / bases de ADN / bases de ARN.
+\item Cada residuo se compone de átomos.
+	
+\end{itemize}
+\subsubsection{La visualización de las estructuras en Cuadernos jupyter}
+
+Hay una muy agradable "Widget" para portátiles que nos permite visualizar objetos de estructura.
+
+\begin{itemize}
+
+\item conda config --add channels conda-forge
+\item conda install nglview -c bioconda
+\item might need: jupyter-nbextension enable nglview --py --sys-prefix
+
+\end{itemize}
+También se puede utilizar: pip install nglview
+
+\begin{center}
+	\includegraphics[width=12cm,height=2cm]{JProtein.png}
+\end{center}
+
+Para hacer manipulaciones más avanzados, es mejor utilizar herramientas independientes tales como Quimera y Pymol .\\
+
+\noindent\textbf{Vamos a ver nuestra proteína}\\
+
+\noindent Ahora que ya habilitamos la nglview en jupyter, desarrollamos el siguiente escript.
+
+\begin{center}
+	\includegraphics[width=16cm,height=3.3cm]{scriptView.png}
+\end{center}
+
+Mostramos el objeto view
+
+\begin{center}
+	\includegraphics[width=16cm,height=6cm]{protein0.png}
+\end{center}
+
+Como era de esperar, vemos un montón cadenas donde cada cadena se visualiza como una cinta continua en el espacio 3D. Esto se conoce como una representación "cinta".
+
 \subsection{Interfaz Gráfica}
 \noindent Todos estos algoritmos y otros se encuentran como funciones en una libreria llamada \textbf{BioTool}, el cual es usado en la implementacion de la interfaz gráfica.
 Para la interfaz gráfica se utiliza las siguientes librerias, estas ya vienen por defecto con python.
@@ -377,6 +507,13 @@ Para la interfaz gráfica se utiliza las siguientes librerias, estas ya vienen p
 
 \end{itemize}
 No se muestra el codigo porque posee demasiadas lineas. La intefaz final se muestra en la siguiente imagen.
+
+\begin{center}
+	\includegraphics[width=5.5cm,height=6cm]{bienvenida.png}
+	
+	Fig. Ventana de bienvenida
+	
+\end{center}
 
 \begin{center}
 	\includegraphics[width=11cm,height=10cm]{InterfazFinal.png}
@@ -425,16 +562,58 @@ Sin embargo, es importante notar que, en ambos árboles, los mamíferos se encue
 	
 	Fig. Comparación entre árboles UPGMA y Neighbor
 \end{center}
+\subsubsection{Modelamiento 3D de la Proteina}
+
+\noindent\textbf{Representación cinta}\\
+
+\noindent Podemos ver que tenemos 5 cadenas diferentes de color rojo, azul, celeste, naranja, crema.
+\begin{center}
+	\includegraphics[width=16cm,height=12cm]{protein1.png}
+	
+	Fig. Modelo 3D de la proteina NADH deshidrogenasa en el HomoSapiens 
+\end{center}
+
+\noindent\textbf{Ligando}
+
+Ligando a aquella molécula que se une al centro activo de la proteína para que ésta pueda realizar su función (transportar, o inhibir una reacción metabólica).
+
+Además existen varios tipos de ligandos.
+
+\begin{center}
+	\includegraphics[width=6cm,height=4cm]{ligando1.png}
+	\includegraphics[width=4cm,height=4cm]{ligando4.png}
+		
+\end{center}
 
 
-
-
-\subsubsection{Modelamiento de la Estrutura de Proteinas}
-En el análisis se encuentra el modelamiento de la Estructura de Proteinas
+\begin{center}
+	\includegraphics[width=5cm,height=7cm]{ligando2.png}
+	\includegraphics[width=4cm,height=6cm]{ligando3.png}
+	
+\end{center}
 
 \section{Conclusiones}
-Incluye las ventajas y desventajas del enfoque utilizado, aspectos inesperados del proyecto, trabajo futuro, etc.
-\section{Apéndice}
+
+El presente proyecto llamado GATTACA consistió en crear un programa con interfaz gráfica que muestra cómo utilizar los recursos informáticos de BioPython para el alineamiento múltiple de secuencias y creación de árboles filogenéticos para especies endémicas. Dentro de las ventajas el usuario puede escoger aquellas especies que quiere analizar, en caso de querer analizar otras especies solo necesita seguir los pasos de la implementación y poner su data en algunos directorios, también se puede replicar el modelamiento 3D. Entre las desventajas se tienen que el programa requiere la instalación de varias librerías y paquetes de Python y Bio. Para los trabajos futuros se pretende poder realizar un modelamiento 3D con animación.
+
+\begin{thebibliography}{0}
+	
+	\bibitem{} Biopython\\ \textcolor{blue}{\url{https://biopython.org/}}.
+	
+	\bibitem{}The Biopython Structural Bioinformatics FAQ\\
+	\textcolor{blue}{\url{https://biopython.org/wiki/The_Biopython_Structural_Bioinformatics_FAQ}}.
+	
+	\bibitem{}Construcción de arboles filogeneticos apartir de base de datos geneticos\\ \textcolor{blue}{\url{https://www.researchgate.net/publication/316217579_BIOINFORMATICA_EN_EL_AULA_CONSTRUCCION_DE_ARBOLES_FILOGENETICOS_A_PARTIR_DE_BASES_DE_DATOS_MOLECULARES}}.
+	
+	\bibitem{}Realizar el árbol filogenético\\ \textcolor{blue}{\url{http://elviajedelnavegante.blogspot.com/2015/05/generacion-de-arboles-filogeneticos.html}}.
+	
+	\bibitem{} Modelado de la proteina\\ \textcolor{blue}{\url{https://eead-csic-compbio.github.io/bioinformatica_estructural/node35.html}}.
+	
+	
+	
+	
+\end{thebibliography}
+
 
 
 \end{document}
